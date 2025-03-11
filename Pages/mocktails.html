@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alcoholic Drinks - The Polar Ice Cave</title>
+    <link rel="stylesheet" href="D:/The Polar Ice Cave/Style/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="D:/The Polar Ice Cave/index.html">Home</a>
+        <a href="D:/The Polar Ice Cave/Pages/cocktails.html">Cocktails</a>
+        <a href="D:/The Polar Ice Cave/Pages/shots.html">Shots</a>
+        <a href="D:/The Polar Ice Cave/Pages/mocktails.html">Mocktails</a>
+        <a href="D:/The Polar Ice Cave/Pages/gallery.html">Gallery</a>
+    </nav>
+
+    <!-- Page Title -->
+    <!-- Menu Section: Non-Alcoholic Drinks -->
+    <div id="non-alcoholic" class="page">
+        <h2>Mocktails</h2>
+        <div class="menu">
+            <div class="cocktail">
+                <img src="Mocktails/virginmojito.png" alt="Virgin Mojito">
+                <div class="cocktail-content">
+                    <h3><span style="color: #808080;">❄</span>Virgin Mojito</h3>
+                    <p>Ingredients: Lime, Simple Syrup, Soda, Mint.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/virginorangemojito.png" alt="Virgin Orange Mojito">
+                <div class="cocktail-content">
+                    <h3><span style="color: #808080;">❄</span>Virgin Orange Mojito</h3>
+                    <p>Ingredients: Orange, Simple Syrup, Soda, Mint, Orange Juice.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/misswelles.png" alt="Miss Welles">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Miss Welles</h3>
+                    <p>Ingredients:Lime Juice, Ginger Beer, Splash of Love.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/babydeathclaw.png" alt="Baby Deathclaw">
+                <div class="cocktail-content">
+                    <h3><span style="color: #808080;">❄</span>Baby Deathclaw</h3>
+                    <p>Ingredients: Blackberry Juice, Orange Juice, Pineapple juice, Energy Drink, Grenadine.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/tiltedtowers.png" alt="Tilted Towers">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Tilted Towers</h3>
+                    <p>Ingredients: Orange Juice, Energy Drink, Sprite.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/angryred.png" alt="Angryred">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Angry Red</h3>
+                    <p>Ingredients: Cranberry Juice, Apple Juice, Orange Juice, Ginger Beer.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/dontcallmeshirley.png" alt="dontcallmeshirley">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Dont Call Me Shirley</h3>
+                    <p>Ingredients: Lime Juice, Grenadine, Soda.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/moscowpony.png" alt="moscowpony">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Moscow Pony</h3>
+                    <p>Ingredients: Lime juice, Simple Syrup Ginger Beer.</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/sunrise.png" alt="Sunrise">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Sunrise</h3>
+                    <p>Ingredients: Grenadine, Sprite, Orange Juice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Polar Bear with Message -->
+    <div class="polar-bear">
+        <img src="D:/The Polar Ice Cave/Style/polar-bear.png" alt="Polar Bear" class="floating-image">
+        <div class="message-box">Try our signature cocktails!</div>
+    </div>
+
+    <!-- JavaScript for Message Box -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const messageBox = document.getElementById("message-box");
+
+            // Define messages for each drink
+            const drinkMessages = {
+                "mojito": "Mojito: A refreshing blend of mint and lime!",
+                "pálesz": "Pálesz: Magyar cucc",
+                "virgin-mojito": "Virgin Mojito: Perfect for a sober chill!"
+            };
+
+            // Add event listeners to cocktail cards
+            document.querySelectorAll(".cocktail").forEach(cocktail => {
+                cocktail.addEventListener("mouseenter", () => {
+                    const drinkName = cocktail.querySelector("h3").textContent.toLowerCase().replace(" ", "-");
+                    if (drinkMessages[drinkName]) {
+                        messageBox.textContent = drinkMessages[drinkName];
+                        messageBox.style.display = "block";
+                    }
+                });
+
+                cocktail.addEventListener("mouseleave", () => {
+                    messageBox.style.display = "none";
+                });
+            });
+        });
+    </script>
+    <!-- Snowflake Animation Script -->
+    <script>
+        const body = document.body;
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            
+            // Randomize snowflake position, size, and duration
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 1.5 + 1 + 'em';
+
+            body.appendChild(snowflake);
+
+            // Remove the snowflake after it finishes falling
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        // Generate snowflakes every 300ms
+        setInterval(createSnowflake, 300);
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Polar Ice Cave. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
