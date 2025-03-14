@@ -136,11 +136,6 @@ body {
     display: flex;
     align-items: center;
 }
-.cocktail-content h3::before {
-    content: '\2744'; /* Unicode for snowflake */
-    color: #00ffff;
-    margin-right: 8px;
-}
 .cocktail-content p {
     margin-bottom: 15px;
 }
