@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../Style/style.css">
 </head>
 <body>
-
+    <input type="text" id="searchBar" placeholder="Search for a drink..." onkeyup="searchDrinks()">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="../index.html">Home</a>
@@ -651,6 +651,29 @@
     <footer>
         <p>&copy; 2025 The Polar Ice Cave. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchBar");
+    const cocktails = document.querySelectorAll(".cocktail");
+
+    searchInput.addEventListener("input", () => {
+        const searchText = searchInput.value.toLowerCase();
+
+        cocktails.forEach(cocktail => {
+            const title = cocktail.querySelector("h3").textContent.toLowerCase();
+            const ingredients = cocktail.querySelector("p").textContent.toLowerCase();
+
+            if (title.includes(searchText) || ingredients.includes(searchText)) {
+                cocktail.style.display = "flex"; // Show matching drinks
+            } else {
+                cocktail.style.display = "none"; // Hide non-matching drinks
+            }
+        });
+    });
+});
+
+    </script>
 
 </body>
 </html>
