@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="Style/favicon.ico">
 </head>
 <body>
-
+    <input type="text" id="searchBar" placeholder="Search for a drink..." onkeyup="searchDrinks()">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="index.html">Home</a>
@@ -25,7 +25,7 @@
     </div>
     <!-- Main Content -->
     <section class="page">
-        <h2>Our Signature Drinks</h2>
+        <h2>Owner's Recommendaiton</h2>
         <div class="menu">
             <div class="cocktail">
                 <img src="Pages/Cocktails/polarbear.gif" alt="Polarbear">
@@ -36,10 +36,18 @@
                 </div>
             </div>
             <div class="cocktail">
-                <img src="Pages/Cocktails/margarita.png" alt="Margarita">
+                <img src="Cocktails/godfather.png" alt="godfather">
                 <div class="cocktail-content">
-                    <h3><span style="color: #00ffff;">❄</span>Margarita</h3>
-                    <p>Ingredients:Tequila, Triple Sec, Lime Juice.</p>
+                    <h3><span style="color: #00ffff;">❄</span>Godfather</h3>
+                    <p>Whiskey, Amaretto.</p>
+		    <p class="price">900 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Cocktails/subzero.png" alt="Subzero">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Sub Zero</h3>
+                    <p>Ingredients: Vodka, Blue Curacao, Lemon Juice, Simple Syrup, Ice.</p>
 		    <p class="price">700 Ft</p>
                 </div>
             </div>
@@ -48,15 +56,23 @@
 
     <section class="page">
         <h2>masik csoport</h2>
-        <div class="cocktail">
-            <img src="Pages/Cocktails/manapotion.png" alt="Manapotion">
-            <div class="cocktail-content">
-                <h3><span style="color: #00ffff;">❄</span>Mana Potion</h3>
-                <p>Ingredients: Gin, Blue Curacao, Lime Juice, Soda.</p>
-        <p class="price">600 Ft</p>
-            </div>
-        </div>
         <div class="menu">
+            <div class="cocktail">
+                <img src="Pages/Cocktails/margarita.png" alt="Margarita">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Margarita</h3>
+                    <p>Ingredients:Tequila, Triple Sec, Lime Juice.</p>
+		    <p class="price">700 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Cocktails/reptile.png" alt="Reptile">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Reptile</h3>
+                    <p>Ingredients: Vodka, Melon Liqueur, Blue Couracao, Pineapple Juice, Lime Juice.</p>
+		    <p class="price">1200 Ft</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -96,6 +112,29 @@
     <footer>
         <p>&copy; 2025 The Polar Ice Cave. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchBar");
+    const cocktails = document.querySelectorAll(".cocktail");
+
+    searchInput.addEventListener("input", () => {
+        const searchText = searchInput.value.toLowerCase();
+
+        cocktails.forEach(cocktail => {
+            const title = cocktail.querySelector("h3").textContent.toLowerCase();
+            const ingredients = cocktail.querySelector("p").textContent.toLowerCase();
+
+            if (title.includes(searchText) || ingredients.includes(searchText)) {
+                cocktail.style.display = "flex"; // Show matching drinks
+            } else {
+                cocktail.style.display = "none"; // Hide non-matching drinks
+            }
+        });
+    });
+});
+
+    </script>
 
 </body>
 </html>
