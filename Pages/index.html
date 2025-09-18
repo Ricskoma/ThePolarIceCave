@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Polar Ice Cave</title>
+    <link rel="stylesheet" href="Style/style.css">
+    <link rel="icon" type="image/x-icon" href="Style/favicon.ico">
+</head>
+<body>
+    <input type="text" id="searchBar" placeholder="Search for a drink..." onkeyup="searchDrinks()">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="Pages/cocktails.html">Cocktails</a>
+        <a href="Pages/shots.html">Shots</a>
+        <a href="Pages/mocktails.html">Mocktails</a>
+        <a href="Pages/games.html">Games</a>
+        <a href="Pages/gallery.html">Gallery</a>
+    </nav>
+
+    <!-- Cover Section -->
+    <div id="cover" class="cover">
+        <img src="Style/main-sign.png" alt="The Polar Ice Cave Main Sign">
+    </div>
+    <!-- Main Content -->
+
+    <section class="page">
+        <h2>New Drinks</h2>
+        <div class="menu">
+            <div class="cocktail">
+                <img src="Pages/Shots/ronpiet.png" alt="ankha">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Rum</h3>
+                    <p>Brand: Ron Piet.</p>
+		            <p class="price">1000 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Pages/Shots/ozeki.png" alt="sake">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Sake</h3>
+                    <p>Ingredients: Ozeki.</p>
+		            <p class="price">1000 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Pages/Shots/pinakq.png" alt="sake">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Liqueur</h3>
+                    <p>Ingredients: PinaQ.</p>
+		            <p class="price">800 Ft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page">
+        <h2>Owner's Recommendation</h2>
+        <div class="menu">
+            <div class="cocktail">
+                <img src="Pages/Cocktails/polarbear.gif" alt="Polarbear">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Polar Bear</h3>
+                    <p>Ingredients: Vodka, Blue Curacao, Lime Juice, Energy Drink, Sprite.</p>
+		            <p class="price">700 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Pages/Cocktails/godfather.png" alt="godfather">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Godfather</h3>
+                    <p>Whiskey, Amaretto.</p>
+		        <p class="price">900 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Pages/Cocktails/subzero.png" alt="Subzero">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Sub Zero</h3>
+                    <p>Ingredients: Vodka, Blue Curacao, Lemon Juice, Simple Syrup, Ice.</p>
+		        <p class="price">700 Ft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page">
+        <h2>Guest Favorites</h2>
+        <div class="menu">
+            <div class="cocktail">
+                <img src="Pages/Cocktails/margarita.png" alt="Margarita">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Margarita</h3>
+                    <p>Ingredients:Tequila, Triple Sec, Lime Juice.</p>
+		    <p class="price">700 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Pages/Cocktails/reptile.png" alt="Reptile">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Reptile</h3>
+                    <p>Ingredients: Vodka, Melon Liqueur, Blue Couracao, Pineapple Juice, Lime Juice.</p>
+		    <p class="price">1200 Ft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Polar Bear with Message -->
+    <div class="polar-bear">
+        <img src="Style/polar-bear.png" alt="Polar Bear" class="floating-image">
+        <div class="message-box">Try our special cocktails!</div>
+    </div>
+
+    <!-- Snowflake Animation Script -->
+    <script>
+        const body = document.body;
+
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.textContent = '❄';
+            
+            // Randomize snowflake position, size, and duration
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 1.5 + 1 + 'em';
+
+            body.appendChild(snowflake);
+
+            // Remove the snowflake after it finishes falling
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        // Generate snowflakes every 300ms
+        setInterval(createSnowflake, 300);
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Polar Ice Cave. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchBar");
+    const cocktails = document.querySelectorAll(".cocktail");
+
+    searchInput.addEventListener("input", () => {
+        const searchText = searchInput.value.toLowerCase();
+
+        cocktails.forEach(cocktail => {
+            const title = cocktail.querySelector("h3").textContent.toLowerCase();
+            const ingredients = cocktail.querySelector("p").textContent.toLowerCase();
+
+            if (title.includes(searchText) || ingredients.includes(searchText)) {
+                cocktail.style.display = "flex"; // Show matching drinks
+            } else {
+                cocktail.style.display = "none"; // Hide non-matching drinks
+            }
+        });
+    });
+});
+
+    </script>
+
+</body>
+</html>
