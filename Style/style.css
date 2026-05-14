@@ -5,7 +5,7 @@ body {
     background-color: #002244;
     color: #ffffff;
     overflow-x: hidden;
-    background-image: url('/ice-border2.png');
+    background-image: url('ice-border2.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,22 +67,6 @@ body {
     background-size: cover;
     background-position: center;
 }
-
-/* Search Bar */
-#searchBar {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 2px solid #00ffff;
-    background-color: #001122;
-    color: #ffffff;
-    display: block;
-    margin: 80px auto 20px;
-    text-align: center;
-}
-
 /* Price Text */
 .price {
     font-size: 1.2em;
@@ -151,6 +135,11 @@ body {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+}
+.cocktail-content h3::before {
+    content: '\2744'; /* Unicode for snowflake */
+    color: #00ffff;
+    margin-right: 8px;
 }
 .cocktail-content p {
     margin-bottom: 15px;
@@ -226,4 +215,53 @@ footer {
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+}
+.cocktail {
+    position: relative;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    box-shadow: 0 0 10px currentColor;
+}
+
+/* Tier colors */
+.s-tier {
+    background: #ff3333;
+    color: #002244;
+}
+
+.a-tier {
+    background: #ff8800;
+    color: white;
+}
+
+.b-tier {
+    background: #ffbb00;
+    color: white;
+}
+
+.c-tier {
+    background: #ffd700;
+    color: black;
+}
+
+.d-tier {
+    background: #8fcc00;
+    color: white;
+}
+
+.f-tier {
+    background: #00cc66;
+    color: white;
 }
