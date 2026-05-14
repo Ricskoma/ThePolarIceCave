@@ -216,6 +216,7 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+/* Tierlist */
 .cocktail {
     position: relative;
     display: flex;
@@ -248,7 +249,7 @@ html {
 
     background-color: transparent !important;
 
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
 
     border: 3px solid currentColor;
@@ -270,3 +271,14 @@ html {
 .c-tier { color: #ffff00; }
 .d-tier { color: #99ff00; }
 .f-tier { color: #00ff66; }
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 8px currentColor, inset 0 0 8px currentColor; }
+    50% { box-shadow: 0 0 18px currentColor, inset 0 0 14px currentColor; }
+    100% { box-shadow: 0 0 8px currentColor, inset 0 0 8px currentColor; }
+}
+
+.s-tier,
+.a-tier {
+    animation: pulseGlow 2s infinite;
+}
