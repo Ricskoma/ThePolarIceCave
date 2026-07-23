@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mocktails - The Polar Ice Cave</title>
-    <link rel="stylesheet" href="../Style/style.css">
+    <link rel="stylesheet" href="D:/The Polar Ice Cave/Style/style.css">
 </head>
 <body>
-    <input type="text" id="searchBar" placeholder="Search for a drink..." onkeyup="searchDrinks()">
+
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="cocktails.html">Cocktails</a>
-        <a href="shots.html">Shots</a>
-        <a href="mocktails.html">Mocktails</a>
-        <a href="games.html">Games</a>
-        <a href="gallery.html">Gallery</a>
+        <a href="D:/The Polar Ice Cave/index.html">Home</a>
+        <a href="D:/The Polar Ice Cave/Pages/cocktails.html">Cocktails</a>
+        <a href="D:/The Polar Ice Cave/Pages/shots.html">Shots</a>
+        <a href="D:/The Polar Ice Cave/Pages/mocktails.html">Mocktails</a>
+        <a href="D:/The Polar Ice Cave/Pages/games.html">Games</a>
+        <a href="D:/The Polar Ice Cave/Pages/gallery.html">Gallery</a>
     </nav>
 
     <!-- Page Title -->
@@ -26,7 +26,7 @@
             <div class="cocktail">
                 <img src="Mocktails/virginmojito.png" alt="Virgin Mojito">
                 <div class="cocktail-content">
-                    <h3><span style="color: #00ffff;">❄</span>Virgin Mojito</h3>
+                    <h3><span style="color: #808080;">❄</span>Virgin Mojito</h3>
                     <p>Ingredients: Lime, Simple Syrup, Soda, Mint.</p>
                     <p class="price">400 Ft</p>
                 </div>
@@ -96,17 +96,24 @@
                 </div>
             </div>
             <div class="cocktail">
-                <img src="Mocktails/pepsi.png" alt="Pepsi">
+                <img src="Mocktails/cola.png" alt="cola">
                 <div class="cocktail-content">
-                    <h3><span style="color: #00ffff;">❄</span>Pepsi</h3>
+                    <h3><span style="color: #808080;">❄</span>Pepsi</h3>
                     <p class="price">400 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
+                <img src="Mocktails/xixocola.png" alt="xixocola">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Xixo Cola</h3>
+                    <p class="price">300 Ft</p>
                 </div>
             </div>
             <div class="cocktail">
                 <img src="Mocktails/cranberry.png" alt="cranberry">
                 <div class="cocktail-content">
                     <h3><span style="color: #00ffff;">❄</span>Cranberry Juice</h3>
-                    <p class="price">400 Ft</p>
+                    <p class="price">300 Ft</p>
                 </div>
             </div>
             <div class="cocktail">
@@ -120,7 +127,7 @@
                 <img src="Mocktails/fanta.png" alt="fanta">
                 <div class="cocktail-content">
                     <h3><span style="color: #00ffff;">❄</span>Fanta</h3>
-                    <p class="price">400 Ft</p>
+                    <p class="price">150 Ft</p>
                 </div>
             </div>
             <div class="cocktail">
@@ -131,30 +138,37 @@
                 </div>
             </div>
             <div class="cocktail">
+                <img src="Mocktails/oldjamaica.png" alt="oldjamaica">
+                <div class="cocktail-content">
+                    <h3><span style="color: #00ffff;">❄</span>Ginger Beer</h3>
+                    <p class="price">700 Ft</p>
+                </div>
+            </div>
+            <div class="cocktail">
                 <img src="Mocktails/icetea.png" alt="icetea">
                 <div class="cocktail-content">
                     <h3><span style="color: #00ffff;">❄</span>Ice Tea</h3>
-                    <p class="price">200 Ft</p>
+                    <p class="price">100 Ft</p>
                 </div>
             </div>
             <div class="cocktail">
                 <img src="Mocktails/orange.png" alt="orange">
                 <div class="cocktail-content">
                     <h3><span style="color: #00ffff;">❄</span>Orange Juice</h3>
-                    <p class="price">300 Ft</p>
+                    <p class="price">250 Ft</p>
                 </div>
             </div>
             <div class="cocktail">
                 <img src="Mocktails/pineapple.png" alt="pineapple">
                 <div class="cocktail-content">
                     <h3><span style="color: #00ffff;">❄</span>Pineapple Juice</h3>
-                    <p class="price">400 Ft</p>
+                    <p class="price">300 Ft</p>
                 </div>
             </div>
             <div class="cocktail">
-                <img src="Mocktails/7up.png" alt="7up">
+                <img src="Mocktails/sprite.png" alt="sprite">
                 <div class="cocktail-content">
-                    <h3><span style="color: #00ffff;">❄</span>7 UP</h3>
+                    <h3><span style="color: #00ffff;">❄</span>Sprite</h3>
                     <p class="price">400 Ft</p>
                 </div>
             </div>
@@ -170,7 +184,7 @@
 
     <!-- Floating Polar Bear with Message -->
     <div class="polar-bear">
-        <img src="../Style/polar-bear.png" alt="Polar Bear" class="floating-image">
+        <img src="D:/The Polar Ice Cave/Style/polar-bear.png" alt="Polar Bear" class="floating-image">
         <div class="message-box">Try our signature cocktails!</div>
     </div>
 
@@ -232,29 +246,6 @@
     <footer>
         <p>&copy; 2025 The Polar Ice Cave. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const searchInput = document.getElementById("searchBar");
-    const cocktails = document.querySelectorAll(".cocktail");
-
-    searchInput.addEventListener("input", () => {
-        const searchText = searchInput.value.toLowerCase();
-
-        cocktails.forEach(cocktail => {
-            const title = cocktail.querySelector("h3").textContent.toLowerCase();
-            const ingredients = cocktail.querySelector("p").textContent.toLowerCase();
-
-            if (title.includes(searchText) || ingredients.includes(searchText)) {
-                cocktail.style.display = "flex"; // Show matching drinks
-            } else {
-                cocktail.style.display = "none"; // Hide non-matching drinks
-            }
-        });
-    });
-});
-
-    </script>
 
 </body>
 </html>
